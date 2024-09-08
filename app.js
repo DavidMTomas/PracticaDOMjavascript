@@ -111,7 +111,7 @@ function validarEntrada(elemento) {
     const regex = /^[0-9]+$/;
     if (!regex.test(valor)) {
         alert('Entrada inválida. Por favor, ingrese solo números.');
-        elemento.value='';
+        elemento.value='0';
         elemento.focus();     // Vuelve a enfocar el campo de entrada
        // elemento.preventDefault();     // Evita cualquier acción predeterminada que pudiera ocurrir
     }
@@ -167,5 +167,46 @@ const nuevoBoton = document.createElement("a")
 nuevoBoton.setAttribute("class", "link")
 nuevoBoton.textContent="Nuevo boton"
 document.body.append(nuevoBoton)
+
+
+document.addEventListener("click", function(event){
+    console.log(event.target)
+})
+
+
+
+
+let botonesLink = document.querySelectorAll(".link")
+let bloqueoBotones=false
+
+botonesLink[3].addEventListener("click", function () {
+   if(bloqueoBotones){
+       enabled(botonesLink[0])
+       enabled(botonesLink[1])
+       enabled(botonesLink[2])
+       bloqueoBotones=false
+   }else{
+       disabled(botonesLink[0])
+       disabled(botonesLink[1])
+       disabled(botonesLink[2])
+       bloqueoBotones=true
+   }
+})
+
+function enabled(enlace){
+    // Cambia el estilo para que parezca deshabilitado
+    enlace.style.pointerEvents = "auto"; // Desactiva clics
+    enlace.style.color = "white"; // Cambia el color a gris
+}
+
+
+function disabled(enlace){
+    // Cambia el estilo para que parezca deshabilitado
+    enlace.style.pointerEvents = "none"; // Desactiva clics
+    enlace.style.color = "gray"; // Cambia el color a gris
+
+}
+
+
 
 
