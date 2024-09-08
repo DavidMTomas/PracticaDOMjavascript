@@ -40,3 +40,18 @@
 .link.bold {
     font-weight: bold;
 }
+
+.form {
+    display: block;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+.campos {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
